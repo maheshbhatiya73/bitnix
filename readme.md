@@ -1,50 +1,33 @@
-# Bitnix
+# Bitnix - A Terminal-Based Network and Process Monitor
 
-**Bitnix** is a fully terminal-based, real-time network speed monitor built in Go using a modern TUI (Text User Interface).  
-It displays upload and download speeds in Mbps with a dynamic fullscreen UI.
+Bitnix is a lightweight, terminal-based tool for monitoring network traffic and process activity on your Linux system. It provides a real-time view of your network interfaces and the processes that are using the network.
 
 ## Features
 
-- **Real-time Monitoring**: Displays live upload and download network speeds.
-- **TUI-based**: A clean and modern text-based user interface that runs in your terminal.
-- **Cross-platform**: Built with Go, it should run on any platform supported by the dependencies.
-- **Lightweight**: Minimal resource usage.
+*   **Network Monitoring**: View real-time download and upload speeds for each network interface.
+*   **Process Monitoring**: See a list of processes and their network usage (RX and TX).
+*   **Interactive TUI**: A user-friendly terminal interface built with Bubble Tea.
+*   **Sorting**: Sort processes by total network usage, received data, or transmitted data.
+*   **Graphs**: Visualize network traffic with historical graphs.
 
-## How it Works
+## Screenshots
 
-Bitnix uses the following components:
+### Network Monitor
+![Network Monitor](assets/network-monitor.png)
 
-- **`gopsutil`**: To fetch network I/O statistics from the underlying operating system.
-- **`Bubble Tea`**: A Go framework for building terminal-based user interfaces.
-- **`lipgloss`**: For styling the TUI with colors and layouts.
+### Process Monitor
+![Process Monitor](assets/process-monitor.png)
 
-The application polls for network data every second and updates the UI with the calculated upload and download speeds in Mbps.
+## How to run
 
-## Dependencies
-
-- **[github.com/charmbracelet/bubbletea](https://github.com/charmbracelet/bubbletea)**: For the terminal user interface.
-- **[github.com/shirou/gopsutil/v3](https://github.com/shirou/gopsutil/v3)**: For fetching network statistics.
-- **[github.com/charmbracelet/lipgloss](https://github.com/charmbracelet/lipgloss)**: For styling the UI.
-
-## Installation
-
-1.  **Clone the repository:**
+1.  Clone the repository:
     ```bash
     git clone https://github.com/your-username/bitnix.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
     cd bitnix
     ```
-
-2.  **Build the application:**
+3.  Run the application:
     ```bash
-    go build
-    ```
-
-## Usage
-
-Run the compiled binary from your terminal:
-
-```bash
-./bitnix
-```
-
-Press `q` or `ctrl+c` to quit the application.
+    go run main.go
